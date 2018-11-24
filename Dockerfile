@@ -12,12 +12,10 @@ RUN apt-get update \
 RUN useradd -G staff depnetr
 USER depnetr
 
-RUN Rscript -e 'install.packages(c("devtools", "mvbutils", "shiny", "visNetwork", "magrittr"), dependencies = TRUE)'
-
-RUN Rscript -e 'install.packages(c("roxygen2"), dependencies = TRUE)'
+RUN Rscript -e 'install.packages(c("devtools"), dependencies = TRUE)'
 
 COPY . .
 
-RUN R -e 'devtools::install()'
+RUN R -e 'devtools::install_dev_deps(); devtools::install()'
 
 CMD ["bash"]
