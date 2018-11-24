@@ -14,3 +14,4 @@ Suggests:
     shiny (>= 1.2),
     visNetwork (>= 2.0),
     magrittr (>= 1.5)
+RoxygenNote: 6.1.1

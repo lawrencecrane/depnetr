@@ -14,6 +14,8 @@ USER depnetr
 
 RUN Rscript -e 'install.packages(c("devtools", "mvbutils", "shiny", "visNetwork", "magrittr"), dependencies = TRUE)'
 
+RUN Rscript -e 'install.packages(c("roxygen2"), dependencies = TRUE)'
+
 COPY . .
 
 RUN R -e 'devtools::install()'
